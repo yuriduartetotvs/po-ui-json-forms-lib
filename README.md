@@ -450,6 +450,26 @@ Experimente a biblioteca em funcionamento no StackBlitz:
 }
 ```
 
+## Tipos Disponíveis
+
+A biblioteca fornece os seguintes tipos de campo do PO-UI:
+
+- `po-input` - Campo de entrada de texto
+- `po-number` - Campo numérico
+- `po-email` - Campo de e-mail
+- `po-password` - Campo de senha
+- `po-textarea` - Área de texto
+- `po-select` - Seleção única
+- `po-multiselect` - Seleção múltipla
+- `po-combo` - Combo box com busca
+- `po-datepicker` - Seletor de data
+- `po-datepicker-range` - Seletor de intervalo de datas
+- `po-checkbox` - Checkbox individual
+- `po-checkbox-group` - Grupo de checkboxes
+- `po-radio-group` - Grupo de radio buttons
+- `po-switch` - Switch (liga/desliga)
+- `po-lookup` - Campo de busca avançada
+
 ## 🤝 Contribuição
 
 1. Fork o repositório
