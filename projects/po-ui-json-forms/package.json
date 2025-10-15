@@ -1,16 +1,52 @@
 {
   "name": "po-ui-json-forms",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Biblioteca Angular para criação de formulários dinâmicos integrando PO-UI com NGX Formly através de configuração JSON. Permite criar formulários complexos de forma declarativa usando todos os componentes de formulário do PO-UI com validação reativa integrada.",
+  "author": {
+    "name": "Yuri Nabaia Duarte",
+    "email": "yuri.duarte@totvs.com.br"
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "po-ui",
+    "formly",
+    "json-forms",
+    "dynamic-forms",
+    "formularios-dinamicos",
+    "totvs",
+    "biblioteca",
+    "typescript"
+  ],
+  "homepage": "https://github.com/yuriduartetotvs/po-ui-json-forms-lib#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuriduartetotvs/po-ui-json-forms-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuriduartetotvs/po-ui-json-forms-lib/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0",
     "@angular/forms": "^19.0.0",
     "@ngx-formly/core": "^7.0.0",
-    "@po-ui/ng-components": "~19.0.0",
+    "@po-ui/ng-components": "^19.0.0",
     "rxjs": "~7.8.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "module": "fesm2022/po-ui-json-forms.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./fesm2022/po-ui-json-forms.mjs"
+    }
+  }
 }
