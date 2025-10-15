@@ -1,59 +1,133 @@
-# PoUiJsonForms
+# PO-UI JSON Forms
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Uma biblioteca Angular que integra o **PO-UI** com **NGX Formly** para criação de formulários dinâmicos através de configuração JSON. Esta biblioteca permite criar formulários complexos usando componentes do PO-UI de forma declarativa e dinâmica.
 
-## Development server
+## 🚀 Características
 
-To start a local development server, run:
+- ✅ Integração completa entre PO-UI e NGX Formly
+- ✅ Suporte a todos os principais componentes de formulário do PO-UI
+- ✅ Formulários dinâmicos via configuração JSON
+- ✅ Validação reativa integrada
+- ✅ Templates pré-definidos
+- ✅ Compatível com Angular 19+
+- ✅ Componentes standalone
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📦 Instalação
 
 ```bash
-ng generate component component-name
+npm install po-ui-json-forms @po-ui/ng-components @ngx-formly/core
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Dependências Peer
 
-```bash
-ng generate --help
+Esta biblioteca requer as seguintes dependências:
+
+```json
+{
+  "@angular/common": "^19.2.0",
+  "@angular/core": "^19.2.0",
+  "@angular/forms": "^19.2.0",
+  "@ngx-formly/core": "^7.0.0",
+  "@po-ui/ng-components": "~19.0.0",
+  "rxjs": "~7.8.0"
+}
 ```
 
-## Building
+## ⚙️ Configuração
 
-To build the project run:
+### Angular 19 (Standalone Bootstrap)
 
-```bash
-ng build
+Configure no seu `app.config.ts`:
+
+```typescript
+import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { FormlyModule } from '@ngx-formly/core';
+import { 
+  PoUiJsonFormsModule, 
+  PO_UI_FORMLY_TYPES,
+  FormlyFieldPoInput,
+  FormlyFieldPoNumber,
+  FormlyFieldPoEmail,
+  FormlyFieldPoPassword,
+  FormlyFieldPoTextarea,
+  FormlyFieldPoSelect,
+  FormlyFieldPoDatepicker,
+  FormlyFieldPoDatepickerRange,
+  FormlyFieldPoCheckboxGroup,
+  FormlyFieldPoRadioGroup,
+  FormlyFieldPoCombo,
+  FormlyFieldPoCheckbox,
+  FormlyFieldPoLookup,
+  FormlyFieldPoMultiselect,
+  FormlyFieldPoSwitch
+} from 'po-ui-json-forms';
+
+import { routes } from './app.routes';
+
+const FORMLY_TYPES_CONFIG = [
+  { name: 'po-input', component: FormlyFieldPoInput },
+  { name: 'po-number', component: FormlyFieldPoNumber },
+  { name: 'po-email', component: FormlyFieldPoEmail },
+  { name: 'po-password', component: FormlyFieldPoPassword },
+  { name: 'po-textarea', component: FormlyFieldPoTextarea },
+  { name: 'po-select', component: FormlyFieldPoSelect },
+  { name: 'po-datepicker', component: FormlyFieldPoDatepicker },
+  { name: 'po-datepicker-range', component: FormlyFieldPoDatepickerRange },
+  { name: 'po-checkbox-group', component: FormlyFieldPoCheckboxGroup },
+  { name: 'po-radio-group', component: FormlyFieldPoRadioGroup },
+  { name: 'po-combo', component: FormlyFieldPoCombo },
+  { name: 'po-checkbox', component: FormlyFieldPoCheckbox },
+  { name: 'po-lookup', component: FormlyFieldPoLookup },
+  { name: 'po-multiselect', component: FormlyFieldPoMultiselect },
+  { name: 'po-switch', component: FormlyFieldPoSwitch }
+];
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes),
+    provideHttpClient(),
+    importProvidersFrom(
+      PoUiJsonFormsModule.forRoot(),
+      FormlyModule.forRoot({
+        types: FORMLY_TYPES_CONFIG
+      })
+    )
+  ]
+};
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🤝 Contribuição
 
-## Running unit tests
+1. Fork o repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📄 Licença
 
-```bash
-ng test
-```
+MIT License
 
-## Running end-to-end tests
+## 🐛 Reportar Problemas
 
-For end-to-end (e2e) testing, run:
+Se encontrou algum problema ou tem sugestões, por favor:
 
-```bash
-ng e2e
-```
+1. Verifique se já não existe uma issue similar
+2. Crie uma nova issue com:
+   - Descrição detalhada do problema
+   - Passos para reproduzir
+   - Versão do Angular e das dependências
+   - Código de exemplo (se aplicável)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📚 Recursos Adicionais
 
-## Additional Resources
+- [Documentação do PO-UI](https://po-ui.io/)
+- [Documentação do NGX Formly](https://formly.dev/)
+- [Angular Reactive Forms](https://angular.io/guide/reactive-forms)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+**Desenvolvido para ajudar na produtividade de criação de formulario com JSON para PO-UI**
