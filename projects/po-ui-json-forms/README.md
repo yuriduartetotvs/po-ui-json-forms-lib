@@ -24,9 +24,9 @@ Esta biblioteca requer as seguintes dependências:
 
 ```json
 {
-  "@angular/common": "^19.2.0",
-  "@angular/core": "^19.2.0",
-  "@angular/forms": "^19.2.0",
+  "@angular/common": "^19.0.0",
+  "@angular/core": "^19.0.0",
+  "@angular/forms": "^19.0.0",
   "@ngx-formly/core": "^7.0.0",
   "@po-ui/ng-components": "~19.0.0",
   "rxjs": "~7.8.0"
