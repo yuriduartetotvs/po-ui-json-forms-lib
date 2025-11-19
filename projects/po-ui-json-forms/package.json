@@ -27,11 +27,11 @@
     "url": "https://github.com/yuriduartetotvs/po-ui-json-forms-lib/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
+    "@angular/common": "^20.3.9",
+    "@angular/core": "^20.3.9",
+    "@angular/forms": "^20.3.9",
     "@ngx-formly/core": "^7.0.0",
-    "@po-ui/ng-components": "^19.0.0",
+    "@po-ui/ng-components": "^20.3.9",
     "rxjs": "~7.8.0"
   },
   "dependencies": {
