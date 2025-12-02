@@ -9,7 +9,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     <po-input
       [p-label]="props.label || ''"
       [p-placeholder]="props.placeholder || ''"
-      [p-help]="props.description || ''"
       p-required="{{!!props.required}}"
       p-disabled="{{!!props.disabled}}"
       p-readonly="{{!!props.readonly}}"
@@ -37,8 +36,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       (p-change)="props['onChange'] && props['onChange']($event)"
       (p-change-model)="props['onChangeModel'] && props['onChangeModel']($event)"
       (p-enter)="props['onEnter'] && props['onEnter']($event)"
-      (p-keydown)="props['onKeydown'] && props['onKeydown']($event)"
-      (p-additional-help)="props['onAdditionalHelp'] && props['onAdditionalHelp']($event)">
+      (p-keydown)="props['onKeydown'] && props['onKeydown']($event)">
     </po-input>
   `,
   standalone: true,

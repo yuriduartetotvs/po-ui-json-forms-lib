@@ -11,7 +11,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       [p-required]="!!props.required"
       [p-disabled]="!!props.disabled"
       [p-readonly]="!!props.readonly"
-      [p-help]="props['help'] || props['description']"
       [p-auto-focus]="props['autoFocus']"
       [p-clean]="props['clean']"
       [p-end-date]="props['endDate']"
@@ -27,7 +26,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       [p-start-date]="props['startDate']"
       [ngModel]="formControl.value"
       (ngModelChange)="formControl.setValue($event)"
-      (p-additional-help)="props['onAdditionalHelp'] && props['onAdditionalHelp']($event)"
       (p-keydown)="props['onKeydown'] && props['onKeydown']($event)"
       (p-change)="props['onChange'] && props['onChange']($event)">
     </po-datepicker-range>

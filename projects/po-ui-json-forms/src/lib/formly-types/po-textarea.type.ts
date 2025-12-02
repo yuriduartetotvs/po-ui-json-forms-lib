@@ -15,7 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       [p-readonly]="!!props.readonly"
       [p-rows]="props.rows || 3"
       [p-maxlength]="props.maxLength || 0"
-       [p-maxlength]="props.maxLength || 0"
+      [p-maxlength]="props.maxLength || 0"
       [p-optional]="props['optional']"
       [ngModel]="formControl.value"
       (ngModelChange)="formControl.setValue($event)">

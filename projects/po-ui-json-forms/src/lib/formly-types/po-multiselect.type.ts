@@ -11,7 +11,6 @@ import { PoFieldModule } from '@po-ui/ng-components';
       [p-placeholder]="props['placeholder']"
       [p-required]="!!props.required"
       [p-disabled]="!!props.disabled"
-      [p-help]="props['help'] || props['description']"
       [p-options]="selectOptions"
       [p-sort]="props['sort']"
       [p-hide-select-all]="props['hideSelectAll']"
@@ -33,7 +32,6 @@ import { PoFieldModule } from '@po-ui/ng-components';
       [p-show-required]="props['showRequired']"
       [ngModel]="formControl.value"
       (ngModelChange)="formControl.setValue($event)"
-      (p-additional-help)="props['onAdditionalHelp'] && props['onAdditionalHelp']($event)"
       (p-blur)="props['onBlur'] && props['onBlur']($event)"
       (p-change)="props['onChange'] && props['onChange']($event)"
       (p-keydown)="props['onKeydown'] && props['onKeydown']($event)">

@@ -130,6 +130,8 @@ export class AppComponent {
     {
       key: 'nome',
       type: 'po-input',
+      mask: '@@@-999-9999', // Exemplo de máscara
+      maskFormatModel: false
       props: {
         label: 'Nome Completo',
         placeholder: 'Digite seu nome completo',
